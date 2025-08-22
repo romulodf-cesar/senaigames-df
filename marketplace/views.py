@@ -9,8 +9,8 @@ def index(request):
     # template - html entre outros
     # context - objetos (python, python com banco de dados)
     
-    
-    return render(request,'marketplace/index.html')
+    dados = Membro.objects.all()
+    return render(request,'marketplace/index.html',{"cards":dados})
 
 def autentica_membro(request):
     """

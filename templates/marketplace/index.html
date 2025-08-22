@@ -122,12 +122,25 @@
             </div>
             
         </section>
+          
+         <!--DTL (Django Template Engine)--> 
+          {% if cards %}
+          <h6>Últimos membros cadastrados</h6>
+          {% for membro in cards %}
+           <p>{{ membro.nome }}</p> 
+           <img src="{% static 'assets/' %}{{ membro.foto }}">
+          {% endfor %}
+          {% else %} 
+          {% endif %}
 
         <section id="candangos" class="hero">
             <div class="carousel-wrapper" id="carouselWrapper">
                 <div class="speakers-carousel" id="speakersCarousel">
                 </div>
             </div>
+            
+            
+
         </section>
 
 
@@ -167,18 +180,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const speakersData = [
+
+                
+        
+
                 { img: '{% static "/assets/img/romulo.jpeg" %}', name: 'Romulo Silvestre', title: 'Professor Python Developer' },
-                { img: '{% static "/assets/img/luis.jpeg" %}', name: 'Luis F.M. Silva', title: 'Aluno Python Developer' },
-                { img: '{% static "/assets/img/ruth.jpeg" %}', name: 'Ruth Marques', title: 'Aluno Python Developer' },
-                { img: '{% static "/assets/img/steve.jpeg" %}', name: 'Steve Lins', title: 'Aluno Python Developer' },
-                { img: '{% static "/assets/img/samuel.jpeg" %}', name: 'Samuel Alves', title: 'Aluno Python Developer' },
-                { img: '{% static "/assets/img/arthur.jpeg" %}', name: 'Arthur Santos', title: 'Aluno Python Developer' },
-                { img: '{% static "/assets/img/bianca.jpeg" %}', name: 'Bianca Lopes', title: 'Aluno Python Developer' },
-                { img: '{% static "/assets/img/joao.jpeg" %}', name: 'João Oliveira', title: 'Aluno Python Developer' },
-                { img: '{% static "/assets/img/dani.jpeg" %}', name: 'Daniele Gomes', title: 'Aluno Python Developer' },
-                { img: '{% static "/assets/img/matheus.jpeg" %}', name: 'Matheus Ribeiro', title: 'Aluno Python Developer' },                
-                { img: '{% static "/assets/img/matheus.jpeg" %}', name: 'Matheus Ribeiro', title: 'Aluno Python Developer' }
-               
+    
             ];
 
             const carousel = document.getElementById('speakersCarousel');
